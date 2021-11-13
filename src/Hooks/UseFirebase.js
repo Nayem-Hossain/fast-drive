@@ -29,7 +29,7 @@ const UseFirebase = () => {
   //check admin from database
   const [admin, setAdmin] = useState(false);
   useEffect(() => {
-    fetch(`http://localhost:5000/users/${user.email}`)
+    fetch(`https://stark-reaches-71944.herokuapp.com/users/${user.email}`)
       .then((res) => res.json())
       .then((data) => setAdmin(data.admin));
   }, [user.email]);
@@ -131,7 +131,7 @@ const UseFirebase = () => {
   //save user in the database
   const saveUserToDatabase = (email, displayName, METHOD) => {
     const user = { email, displayName };
-    fetch("http://localhost:5000/users", {
+    fetch("https://stark-reaches-71944.herokuapp.com/users", {
       method: METHOD,
       headers: {
         "content-type": "application/json",

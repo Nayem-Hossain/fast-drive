@@ -5,7 +5,7 @@ import Rating from "react-rating";
 const ManageProducts = () => {
   const [allProducts, setAllProducts] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/products")
+    fetch("https://stark-reaches-71944.herokuapp.com/products")
       .then((response) => response.json())
       .then((data) => setAllProducts(data));
   });
@@ -15,7 +15,7 @@ const ManageProducts = () => {
       "Are you sure, you want to delete this product?"
     );
     if (proceed) {
-      const productsUrl = `http://localhost:5000/products/${id}`;
+      const productsUrl = `https://stark-reaches-71944.herokuapp.com/products/${id}`;
       fetch(productsUrl, {
         method: "DELETE",
       })

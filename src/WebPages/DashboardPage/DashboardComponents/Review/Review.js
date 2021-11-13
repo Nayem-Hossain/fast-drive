@@ -25,19 +25,21 @@ const Review = () => {
 
   const onSubmit = (data) => {
     console.log(data);
-    axios.post("http://localhost:5000/reviews", data).then((res) => {
-      console.log(res);
-      if (res.data.insertedId) {
-        Swal.fire("Thanks", "Your review has been Completed!", "success");
-        reset();
-      } else {
-        Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: "Something went wrong!",
-        });
-      }
-    });
+    axios
+      .post("https://stark-reaches-71944.herokuapp.com/reviews", data)
+      .then((res) => {
+        console.log(res);
+        if (res.data.insertedId) {
+          Swal.fire("Thanks", "Your review has been Completed!", "success");
+          reset();
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Something went wrong!",
+          });
+        }
+      });
   };
 
   return (
@@ -53,7 +55,7 @@ const Review = () => {
               value={user?.photoURL || " "}
               {...register("photoURL", { required: true })}
             />
-           {/*  {user?.photoURL && (
+            {/*  {user?.photoURL && (
               <input
                 className="w-50 d-none"
                 readOnly={true}

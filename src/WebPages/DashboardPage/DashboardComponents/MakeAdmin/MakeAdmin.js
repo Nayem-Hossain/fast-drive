@@ -10,19 +10,21 @@ const MakeAdmin = () => {
     reset,
     formState: { errors },
   } = useForm();
- 
+
   const handleMakeAdmin = (data) => {
-    axios.put("http://localhost:5000/users/admin", data).then((response) => {
-      console.log(response);
-      if (response.data.modifiedCount) {
-        Swal.fire(
-          "Completed",
-          "your have successfully created an admin !",
-          "success"
-        );
-        reset();
-      }
-    });
+    axios
+      .put("https://stark-reaches-71944.herokuapp.com/users/admin", data)
+      .then((response) => {
+        console.log(response);
+        if (response.data.modifiedCount) {
+          Swal.fire(
+            "Completed",
+            "your have successfully created an admin !",
+            "success"
+          );
+          reset();
+        }
+      });
   };
   return (
     <>

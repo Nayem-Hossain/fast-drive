@@ -14,23 +14,25 @@ const AddProduct = () => {
 
   const onSubmit = (data) => {
     console.log(data);
-    axios.post("http://localhost:5000/products", data).then((response) => {
-      console.log(response);
-      if (response.data.insertedId) {
-        Swal.fire(
-          "Completed",
-          "Your Have Added a Car Successfully!",
-          "success"
-        );
-        reset();
-      } else {
-        Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: "Something went wrong!",
-        });
-      }
-    });
+    axios
+      .post("https://stark-reaches-71944.herokuapp.com/products", data)
+      .then((response) => {
+        console.log(response);
+        if (response.data.insertedId) {
+          Swal.fire(
+            "Completed",
+            "Your Have Added a Car Successfully!",
+            "success"
+          );
+          reset();
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Something went wrong!",
+          });
+        }
+      });
   };
 
   return (

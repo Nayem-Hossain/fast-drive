@@ -10,7 +10,7 @@ const PurchaseCar = () => {
   const [products, setProducts] = useState([]);
   const [singleCar, setSingleCar] = useState({});
   useEffect(() => {
-    fetch("http://localhost:5000/products")
+    fetch("https://stark-reaches-71944.herokuapp.com/products")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
@@ -38,11 +38,7 @@ const PurchaseCar = () => {
         <div className="row ">
           <div className="col-12 col-md-8">
             <div className=" mb-3">
-              <img
-                src={singleCar?.img}
-                className="card-img-top"
-                alt="..."
-              />
+              <img src={singleCar?.img} className="card-img-top" alt="..." />
               <div className="card-body">
                 <h1 className="card-title">{singleCar?.carName}</h1>
                 <div>
@@ -50,7 +46,6 @@ const PurchaseCar = () => {
                     <span className="fw-bold text-danger">
                       ${singleCar?.price}
                     </span>
-                   
                   </h3>
                 </div>
                 <div>

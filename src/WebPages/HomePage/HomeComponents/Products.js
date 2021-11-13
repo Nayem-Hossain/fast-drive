@@ -5,7 +5,7 @@ import ProductCard from "../../../SharedComponents/ProductCard/ProductCard";
 const Products = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/products")
+    fetch("https://stark-reaches-71944.herokuapp.com/products")
       .then((response) => response.json())
       .then((data) => setProducts(data));
   });

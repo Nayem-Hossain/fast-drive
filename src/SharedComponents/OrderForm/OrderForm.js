@@ -25,23 +25,25 @@ const OrderForm = (props) => {
       confirmButtonText: "Yes!",
     }).then((result) => {
       if (result.isConfirmed) {
-        axios.post("http://localhost:5000/orders", data).then((response) => {
-          console.log(response);
-          if (response.data.insertedId) {
-            Swal.fire(
-              "Completed",
-              "Your Booking has been Completed Successfully!",
-              "success"
-            );
-            reset();
-          } else {
-            Swal.fire({
-              icon: "error",
-              title: "Oops...",
-              text: "Something went wrong!",
-            });
-          }
-        });
+        axios
+          .post("https://stark-reaches-71944.herokuapp.com/orders", data)
+          .then((response) => {
+            console.log(response);
+            if (response.data.insertedId) {
+              Swal.fire(
+                "Completed",
+                "Your Booking has been Completed Successfully!",
+                "success"
+              );
+              reset();
+            } else {
+              Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Something went wrong!",
+              });
+            }
+          });
       }
     });
   };
@@ -54,7 +56,7 @@ const OrderForm = (props) => {
           value={props.carId || " "}
           {...register("carID", { required: true })}
         />
-        
+
         <input
           hidden
           value={props.carImage || " "}
