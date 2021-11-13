@@ -1,0 +1,70 @@
+/* Banner Style Sheet */
+.caption h3 {
+  font-size: 5rem;
+  font-weight: 700;
+  color: white;
+}
+.caption h4 {
+  font-weight: 700;
+  color: white;
+}
+
+.banner1 {
+  background: url(../../../images/banner/55040_2020_Toyota_Innova_Crysta.jpg);
+  background-size: cover;
+  /* background-attachment: fixed; */
+  background-repeat: no-repeat;
+}
+.banner2 {
+  background: url(../../../images/banner/2019_Honda_Civic_Blue_small.jpg);
+  background-size: cover;
+  /* background-attachment: fixed; */
+  background-repeat: no-repeat;
+}
+.banner3 {
+  background: url(../../../images/banner/Marcedes_Benz.png);
+  background-size: cover;
+  /* background-attachment: fixed; */
+  background-repeat: no-repeat;
+}
+.text-size {
+  font-size: 3rem;
+  font-weight: 700;
+}
+/* .position {
+  position: relative;
+  bottom: 70px;
+} */
+/* .btn-explore {
+    background-color: rgb(255, 55, 55);
+    border: 3px solid #3f0082;
+    border-radius: 30px;
+  } */
+
+
+/* our chivement */
+.icon {
+  font-size: 3rem;
+}
+
+.card-background {
+  width: 100%;
+  color: white;
+  border-radius: 20px;
+  background: #6f98ff;
+  box-shadow: 0px 0px 10px #ff8989;
+  padding: 5px 5px;
+}
+
+.text-style {
+  margin-top: 0;
+  font-size: 18px;
+  text-align: center;
+}
+.extra-background {
+  background-image: url(../../../images/world-background.png);
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
