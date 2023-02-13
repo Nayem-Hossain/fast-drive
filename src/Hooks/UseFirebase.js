@@ -29,7 +29,7 @@ const UseFirebase = () => {
   //check admin from database
   const [admin, setAdmin] = useState(false);
   useEffect(() => {
-    fetch(`https://stark-reaches-71944.herokuapp.com/users/${user.email}`)
+    fetch(`https://fast-drive-server.vercel.app/users/${user.email}`)
       .then((res) => res.json())
       .then((data) => setAdmin(data.admin));
   }, [user.email]);
@@ -128,10 +128,11 @@ const UseFirebase = () => {
       console.log(result);
     });
   };
+
   //save user in the database
   const saveUserToDatabase = (email, displayName, METHOD) => {
     const user = { email, displayName };
-    fetch("https://stark-reaches-71944.herokuapp.com/users", {
+    fetch("https://fast-drive-server.vercel.app/users", {
       method: METHOD,
       headers: {
         "content-type": "application/json",

@@ -26,7 +26,7 @@ const Review = () => {
   const onSubmit = (data) => {
     console.log(data);
     axios
-      .post("https://stark-reaches-71944.herokuapp.com/reviews", data)
+      .post("https://fast-drive-server.vercel.app/reviews", data)
       .then((res) => {
         console.log(res);
         if (res.data.insertedId) {

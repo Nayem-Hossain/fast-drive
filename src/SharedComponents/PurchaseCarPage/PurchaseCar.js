@@ -10,7 +10,7 @@ const PurchaseCar = () => {
   const [products, setProducts] = useState([]);
   const [singleCar, setSingleCar] = useState({});
   useEffect(() => {
-    fetch("https://stark-reaches-71944.herokuapp.com/products")
+    fetch("https://fast-drive-server.vercel.app/products")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);

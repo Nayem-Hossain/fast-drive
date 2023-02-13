@@ -15,7 +15,7 @@ const AddProduct = () => {
   const onSubmit = (data) => {
     console.log(data);
     axios
-      .post("https://stark-reaches-71944.herokuapp.com/products", data)
+      .post("https://fast-drive-server.vercel.app/products", data)
       .then((response) => {
         console.log(response);
         if (response.data.insertedId) {

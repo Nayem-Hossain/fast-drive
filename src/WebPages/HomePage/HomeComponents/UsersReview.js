@@ -4,7 +4,7 @@ import defaultImage from "../../../images/defaultUser.png";
 const UsersReview = () => {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    fetch("https://stark-reaches-71944.herokuapp.com/reviews")
+    fetch("https://fast-drive-server.vercel.app/reviews")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);
@@ -14,7 +14,7 @@ const UsersReview = () => {
   return (
     <div className="py-3 text-center">
       <h1 className="mt-2 mb-5">USER REVIEW SECTION</h1>
-      <div className="row row-cols-1 row-cols-md-3 g-4">
+      <div className="row row-cols-1 row-cols-md-3 g-0">
         {reviews.map((review) => (
           <div key={review._id} className="col">
             <div className="card h-100 border-0">

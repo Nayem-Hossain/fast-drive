@@ -5,7 +5,7 @@ import Rating from "react-rating";
 const ManageProducts = () => {
   const [allProducts, setAllProducts] = useState([]);
   useEffect(() => {
-    fetch("https://stark-reaches-71944.herokuapp.com/products")
+    fetch("https://fast-drive-server.vercel.app/products")
       .then((response) => response.json())
       .then((data) => setAllProducts(data));
   });
@@ -15,7 +15,7 @@ const ManageProducts = () => {
       "Are you sure, you want to delete this product?"
     );
     if (proceed) {
-      const productsUrl = `https://stark-reaches-71944.herokuapp.com/products/${id}`;
+      const productsUrl = `https://fast-drive-server.vercel.app/products/${id}`;
       fetch(productsUrl, {
         method: "DELETE",
       })

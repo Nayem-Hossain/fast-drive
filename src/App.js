@@ -10,6 +10,7 @@ import Dashboard from "./WebPages/DashboardPage/Dashboard";
 import PurchaseCar from "./SharedComponents/PurchaseCarPage/PurchaseCar";
 import PrivateRoute from "./SharedComponents/PrivateRoute/PrivateRoute";
 import About from "./WebPages/AboutUsPage/About";
+import OrderSuccess from "./SharedComponents/PurchaseCarPage/OrderSuccess";
 function App() {
   return (
     <BrowserRouter>
@@ -23,6 +24,9 @@ function App() {
           </Route>
           <PrivateRoute path="/purchase_Car/:productId">
             <PurchaseCar></PurchaseCar>
+          </PrivateRoute>
+          <PrivateRoute path="/order_success">
+            <OrderSuccess></OrderSuccess>
           </PrivateRoute>
           <Route path="/explore">
             <ExploreProducts></ExploreProducts>

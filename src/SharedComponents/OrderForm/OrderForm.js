@@ -1,5 +1,5 @@
-import axios from "axios";
 import React from "react";
+import axios from "axios";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import UseAuth from "../../Hooks/UseAuth";
@@ -13,7 +13,29 @@ const OrderForm = (props) => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
+  /* const purchaseProduct = (data) => {
+    const product = {
+      customer_name: user?.displayName,
+      customer_email: user?.email,
+      product_id: props?.carId,
+      product_name: props?.carName,
+      product_image: props?.carImage,
+      product_price: props?.price,
+    };
+    console.log(product);
+
+    fetch(`https://fast-drive-server.vercel.app/init`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((sslCommerz) => window.location.replace(sslCommerz));
+  }; */
+
+  /*  const onSubmit = (data) => {
     console.log(data);
     Swal.fire({
       title: "Are you sure, you want to booking this?",
@@ -26,7 +48,7 @@ const OrderForm = (props) => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .post("https://stark-reaches-71944.herokuapp.com/orders", data)
+          .post("https://fast-drive-server.vercel.app/orders", data)
           .then((response) => {
             console.log(response);
             if (response.data.insertedId) {
@@ -44,6 +66,35 @@ const OrderForm = (props) => {
               });
             }
           });
+      }
+    });
+  }; */
+
+  const onSubmit = (data) => {
+    console.log(data);
+    Swal.fire({
+      title: "Are you sure, want to purchase this car?",
+      text: "You won't be able to revert this!",
+      icon: "question",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`https://fast-drive-server.vercel.app/init`, {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Credentials": true,
+          },
+          body: JSON.stringify(data),
+        })
+          .then((res) => res.json())
+          .then((sslCommerz) => window.location.replace(sslCommerz));
+
+        reset();
       }
     });
   };
@@ -111,6 +162,13 @@ const OrderForm = (props) => {
           placeholder="Enter your Phone Number"
           {...register("phone", { required: true })}
         />
+        <label>Address</label>
+        <input
+          type="text"
+          className="form-control mb-3"
+          placeholder="Enter your address"
+          {...register("address", { required: true })}
+        />
         <div className="row mb-3">
           <div className="col">
             <label>Payment Type</label>
@@ -142,6 +200,7 @@ const OrderForm = (props) => {
         />
 
         <input
+          // onClick={purchaseProduct}
           className="btn btn-warning rounded-pill mb-5 w-100"
           type="submit"
           value="Book Now"

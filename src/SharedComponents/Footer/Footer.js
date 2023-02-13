@@ -6,6 +6,8 @@ import visaCard from "../../images/paymentGatWay/payment-visa-card.png";
 import skrillCard from "../../images/paymentGatWay/payment-skrill-card.png";
 import stripeCard from "../../images/paymentGatWay/payment-stripe-card.png";
 import discoverCard from "../../images/paymentGatWay/payment-discover-card.png";
+import bekash from "../../images/paymentGatWay/payment-bekash-card.png";
+
 const Footer = () => {
   return (
     <footer className="text-white">
@@ -85,10 +87,11 @@ const Footer = () => {
         <div className="col m-2">
           <h2 className="mb-4">We Accepts</h2>
           <div className="g-4">
-            <img src={masterCard} alt="" className="img-fluid me-2 my-2" />
+            <img src={stripeCard} alt="" className="img-fluid me-2 my-2" />
+            <img src={bekash} alt="" className="img-fluid me-2 my-2" />
             <img src={visaCard} alt="" className="img-fluid me-2 my-2" />
             <img src={skrillCard} alt="" className="img-fluid me-2 my-2" />
-            <img src={stripeCard} alt="" className="img-fluid me-2 my-2" />
+            <img src={masterCard} alt="" className="img-fluid me-2 my-2" />
             <img src={discoverCard} alt="" className="img-fluid my-2" />
           </div>
         </div>

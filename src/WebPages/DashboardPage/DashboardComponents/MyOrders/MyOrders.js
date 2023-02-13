@@ -7,7 +7,7 @@ const MyOrders = () => {
   const [userOrders, setUserOders] = useState([]);
 
   useEffect(() => {
-    fetch(`https://stark-reaches-71944.herokuapp.com/orders`)
+    fetch(`https://fast-drive-server.vercel.app/orders`)
       .then((res) => res.json())
       .then((data) => setUserOders(data));
   }, []);
@@ -15,7 +15,7 @@ const MyOrders = () => {
   const handleDeleteOrder = (id) => {
     const proceed = window.confirm("Are you sure, you want to delete");
     if (proceed) {
-      const url = `https://stark-reaches-71944.herokuapp.com/orders/${id}`;
+      const url = `https://fast-drive-server.vercel.app/orders/${id}`;
       fetch(url, {
         method: "DELETE",
       })

@@ -27,10 +27,7 @@
   /* background-attachment: fixed; */
   background-repeat: no-repeat;
 }
-.text-size {
-  font-size: 3rem;
-  font-weight: 700;
-}
+
 /* .position {
   position: relative;
   bottom: 70px;
@@ -42,11 +39,23 @@
   } */
 
 
-/* our chivement */
+
+/* our acivements*/
+
 .icon {
   font-size: 3rem;
 }
 
+.text-size {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.text-style {
+  margin-top: 0;
+  font-size: 18px;
+  text-align: center;
+}
 .card-background {
   width: 100%;
   color: white;
@@ -56,11 +65,6 @@
   padding: 5px 5px;
 }
 
-.text-style {
-  margin-top: 0;
-  font-size: 18px;
-  text-align: center;
-}
 .extra-background {
   background-image: url(../../../images/world-background.png);
   background-size: cover;

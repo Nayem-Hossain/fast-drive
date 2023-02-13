@@ -189,11 +189,11 @@ const Dashboard = () => {
               )}
 
               <hr />
-              <div className="nav-item pb-4">
+              <div className="nav-item pb-4 position-relative">
                 <Link to="/login">
                   <button
                     onClick={logOut}
-                    className="btn btn-danger rounded-pill  fw-bold"
+                    className="btn btn-danger rounded-pill position-fixed bottom-0 start-0 fw-bold"
                   >
                     <span className="ms-1 d-none d-sm-inline">Logout</span>
                     <i className="ps-md-2 fas fa-sign-out-alt"></i>

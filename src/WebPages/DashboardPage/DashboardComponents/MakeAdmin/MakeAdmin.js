@@ -13,7 +13,7 @@ const MakeAdmin = () => {
 
   const handleMakeAdmin = (data) => {
     axios
-      .put("https://stark-reaches-71944.herokuapp.com/users/admin", data)
+      .put("https://fast-drive-server.vercel.app/users/admin", data)
       .then((response) => {
         console.log(response);
         if (response.data.modifiedCount) {

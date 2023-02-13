@@ -5,7 +5,7 @@ import ProductCard from "../../../SharedComponents/ProductCard/ProductCard";
 const Products = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("https://stark-reaches-71944.herokuapp.com/products")
+    fetch("https://fast-drive-server.vercel.app/products")
       .then((response) => response.json())
       .then((data) => setProducts(data));
   });
